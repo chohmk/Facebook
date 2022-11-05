@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+.header-box{
+	height:100px;
+}
+.header-logo{
+	font-weight: bold;
+	font-size: 50px;
+}
+
+
+
+
+
+.contents {
+	height:600px;
+}
