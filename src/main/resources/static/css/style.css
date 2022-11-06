@@ -8,7 +8,29 @@
 	font-size: 50px;
 }
 
+#signUpBox {
+	height:630px;
+	width:500px;
+	background-color: #eaeaea;
+}
+#loginIdCheckBtn {
+	width: 65px;
+	font-size: 11px;
+}
 
+.sign-up-span {
+	display: block;
+	font-size: 15px;
+	color: #727272;
+}
+#signUpBtn {
+	height:60px;
+	background: #18db09;
+}
+
+.href-text {
+	font-size: 25px;
+}
 
 
 
