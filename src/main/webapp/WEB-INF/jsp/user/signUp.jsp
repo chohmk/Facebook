@@ -51,6 +51,43 @@
 	</div>
 </div>
 
+<script>
+	// 아이디 중복확인
+	$(document).ready(function() {
+		$('#loginIdCheckBtn').on('click',function() {
+			let loginId = $('#loginId').val().trim();
+			
+			if (loginId.length < 4) {
+				$('#idCheckLength').removeClass('d-none');
+				$('#idCheckOk').addClass('d-none');
+				$('#idCheckDuplicated').addClass('d-none');
+				return;
+			}
+			
+			// ajax 중복확인
+			$.ajax({
+				url:"is_duplicated_id"
+				, data:{"loginId":loginId}
+				, success:function(data) {
+					if (data.result) {
+						// 중복이면
+						$('#idCheckDuplicated').removeClass('d-none');
+						$('#idCheckLength').addClass('d-none');
+						$('#idCheckOk').addClass('d-none');
+					} else {
+						$('#idCheckOk').removeClass('d-none');
+						$('#idCheckLength').addClass('d-none');
+						$('#idCheckDuplicated').addClass('d-none');
+					}
+				}
+				, error:function(e) {
+					alert("아이디 중복확인에 실패했습니다.");
+				}
+			});
+			
+		});	// 중복확인 끝
+	});	// ready 끝
+</script>
 
 
 
