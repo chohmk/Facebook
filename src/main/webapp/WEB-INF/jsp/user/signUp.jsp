@@ -25,10 +25,10 @@
 				<input type="password" id="password" name="password" class="form-control col-11 mt-3" placeholder="비밀번호">
 				
 				<!-- 인풋박스 비밀번호 확인 -->
-				<input type="password" id=confrimPassword name="confrimPassword" class="form-control col-11 mt-3" placeholder="비밀번호 확인">
+				<input type="password" id=confirmPassword name="confirmPassword" class="form-control col-11 mt-3" placeholder="비밀번호 확인">
 				
 				<!-- 인풋박스 이름 -->
-				<input type="password" id="name" name="name" class="form-control col-11 mt-3" placeholder="이름">
+				<input type="text" id="name" name="name" class="form-control col-11 mt-3" placeholder="이름">
 				
 				<!-- 회원가입 footer -->
 				<span class="sign-up-span">
@@ -44,7 +44,7 @@
 				
 				<!-- 이미 계정이 있을 때 -->
 				<div class="d-flex justify-content-center">
-					<a href="#" class="href-text mt-3">이미 계정이 있으신가요?</a>
+					<a href="/user/sign_in_view" class="href-text mt-3">이미 계정이 있으신가요?</a>
 				</div>
 			</div>
 		</form>
@@ -86,6 +86,54 @@
 			});
 			
 		});	// 중복확인 끝
+		
+		$('#signUpForm').on('submit', function(e) {
+			e.preventDefault();	// submit 기능 중단
+			
+			let loginId = $('#loginId').val().trim();
+			let password = $('#password').val().trim();
+			let confirmPassword = $('#confirmPassword').val().trim();
+			let name = $('#name').val().trim();
+			
+			// validation 
+			if (loginId == "") {
+				alert("아이디를 입력해주세요.");
+				return false;
+			}
+			if (password == "" || confirmPassword == "") {
+				alert("비밀번호를 입력하세요");
+				return false;
+			}
+			if (password != confirmPassword) {
+				alert("비밀번호가 일치하지 않습니다.");
+				return false;
+			}
+			if (name == "") {
+				alert("이름을 입력하세요.");
+				return false;
+			}
+			// 아이디 중복확인이 완료되었는지 확인
+			if ($('#idCheckOk').hasClass('d-none') == true) {
+				alert("아이디 중복확인을 다시 해주세요");
+				return false;
+			}
+			
+			// 회원가입 ajax
+			let url = $(this).attr('action');
+			let params = $(this).serialize();
+			
+			$.post(url, params)
+			.done(function(data) {
+				if (data.code == 100) {
+					alert("가입을 환영합니다.");
+					location.href="/user/sign_in_view";
+				} else {
+					alert("회원가입에 실패하였습니다.");
+				}
+			});	// ajax 끝
+			
+			
+		}); // 가입하기 버튼 끝
 	});	// ready 끝
 </script>
 
