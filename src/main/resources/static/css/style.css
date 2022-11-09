@@ -71,6 +71,7 @@
       background: pink;
       border-radius: 50%;
       display: block;
+      margin-left: 50px;
 }
 .rectangle {
       width: 60px;
@@ -82,11 +83,11 @@
 }
 
 #timelineHeader {
-	width:800px;
+	width: 700px;
 	height:100px;
 }
 #timelineSection {
-	width:800px;
+	width:900px;
 	height:700px;
 }
 .timeline-write {
@@ -94,6 +95,30 @@
 	height:80px;
 	background-color: #eeeeee;
 }
+
+.timeline-div1 {
+	margin-left: 130px;
+}
+.timeline-div2 {
+	margin-left:260px;
+	margin-top:20px;
+	width:500px;
+	height:500px;
+	background-color: red;
+}
+
+.timeline-div3 {
+	margin-left:260px;
+	width:500px;
+	height:40px;
+}
+
+.comment-write {
+	margin-left:260px;
+	width:500px;
+}
+
+
 
 
 

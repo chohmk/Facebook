@@ -27,33 +27,72 @@
 <link rel="stylesheet" type="text/css" href="/static/css/style.css">
 </head>
 <body>
-<div>
-	<div class="d-flex justify-content-center mt-3">
-		<header id="timelineHeader">
-			<div class="d-flex justify-content-around">
-				<h2>Facebook</h2>
-				<div>
-					<button type="button" class="btn">${userName}</button>
-					<button type="submit" class="btn ml-4">로그아웃</button>
-				</div>
-			</div>
-		</header>
-	</div>
-		<section id="timelineSection">
-		<div class="d-flex justify-content-around">
-			<div class="circle"></div>
-			<div>
-			<button type="button" id="timelineMyPage" class="btn text-dark">내 게시물</button>
-			<div class="timeline-write mt-1">
-				<div class="d-flex justify-content-end mr-2 pt-2">
-				<a href="#" id="fileUploadBtn"><img width="35" src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-image-512.png"></a>
-				</div>
-			</div>
-			</div>
-			
+<div class="d-flex justify-content-center">
+<header id="timelineHeader">
+	<div class="d-flex justify-content-between">
+		<h2>Facebook</h2>
+		<div>
+		<button type="button" class="btn">${userName}</button>
+		<button type="submit" class="btn ml-4">로그아웃</button>
 		</div>
-		</section>
-
+	</div>
+</header>
 </div>
+<div class="d-flex justify-content-center">
+<section id="timelineSection">
+	<div class="d-flex justify-content-start">
+		<div class="circle"></div>
+	<!-- 원 옆에 내 게시물, 글쓰기페이지 -->
+		<div class="timeline-div1">
+		<button type="button" id="timelineMyPage" class="btn text-dark">내 게시물</button>
+		<div class="timeline-write mt-1">
+		<a href="/post/post_create_view" class="text-dark">무슨 생각을 하고 계신가요?</a>
+	<div class="d-flex justify-content-end mr-2 pt-2">
+		<a href="#" id="fileUploadBtn"><img width="35" src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-image-512.png"></a>
+	</div>
+		</div>
+		</div>	
+	</div>
+	
+	<!-- timeline 2  -->
+	
+	<div class="timeline-div2">
+	
+	</div>
+	
+	<div class="timeline-div3 d-flex justify-content-between mt-2">
+		<div class="card-like">
+			<a href="#" class="like-btn text-dark">
+				<img src="https://t1.daumcdn.net/cfile/tistory/2275AE4055E8082C25" width="18px" height="18px" alt="empty heart">				
+				좋아요 10개
+			</a>
+				
+		</div>
+		<div>
+			<a href="#" class="text-dark">
+				<img src="https://www.nail25.com/img/footer_mystyle_unactive_icon_jh.png" width="18px" height="18px" alt="empty heart">
+				댓글 달기
+			</a>
+				
+		</div>
+		<div>댓글개수</div>
+	</div>
+	
+	<%-- 댓글 쓰기 --%>
+	<div class="comment-write d-flex border-top mt-2">
+	<input type="text" class="form-control border-0 mr-2" placeholder="댓글을 입력하세요..."/> 
+	<button type="button" class="comment-btn btn btn-light" data-post-id="${post.id}">게시</button>
+	</div>
+	
+	
+	
+	
+	
+</section>
+</div>
+
+
+
+
 </body>
 </html>
