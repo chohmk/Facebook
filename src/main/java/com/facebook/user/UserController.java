@@ -15,16 +15,19 @@ public class UserController {
 	 */
 	@RequestMapping("/sign_up_view")
 	
-	public String signUpView(Model model) {
-		model.addAttribute("viewName", "user/signUp");
+	public String signUpView() {
 		
-		return "template/layout";
+		return "user/signUp";
 	}
 	
-	@RequestMapping("sign_in_view")
-	public String signInView(Model model) {
-		model.addAttribute("viewName", "user/signIn");
+	/**
+	 * 로그인 화면
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("/sign_in_view")
+	public String signInView() {
 		
-		return "template/layout";
+		return "user/signIn";
 	}
 }

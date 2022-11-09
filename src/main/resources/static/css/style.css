@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+
 .header-box{
 	height:100px;
 }
@@ -57,3 +58,43 @@
 .contents {
 	height:600px;
 }
+
+.contents-box {
+	width:700px;
+	height:600px;
+}
+
+
+.circle {
+	width: 80px;
+      height: 80px;
+      background: pink;
+      border-radius: 50%;
+      display: block;
+}
+.rectangle {
+      width: 60px;
+      height: 25px;
+      background: pink;
+    }
+.textarea{
+	border:1px solid #c0c0c0
+}
+
+#timelineHeader {
+	width:800px;
+	height:100px;
+}
+#timelineSection {
+	width:800px;
+	height:700px;
+}
+.timeline-write {
+	width:500px;
+	height:80px;
+	background-color: #eeeeee;
+}
+
+
+
+
