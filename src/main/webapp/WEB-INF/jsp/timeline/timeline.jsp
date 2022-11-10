@@ -44,9 +44,12 @@
 		<div class="circle"></div>
 	<!-- 원 옆에 내 게시물, 글쓰기페이지 -->
 		<div class="timeline-div1">
+		<div class="d-flex justify-content-end">
 		<button type="button" id="timelineMyPage" class="btn text-dark">내 게시물</button>
+		</div>
 		<div class="timeline-write mt-1">
 		<a href="/post/post_create_view" class="text-dark">무슨 생각을 하고 계신가요?</a>
+		
 	<div class="d-flex justify-content-end mr-2 pt-2">
 		<a href="#" id="fileUploadBtn"><img width="35" src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-image-512.png"></a>
 	</div>
@@ -84,10 +87,7 @@
 	<button type="button" class="comment-btn btn btn-light" data-post-id="${post.id}">게시</button>
 	</div>
 	
-	
-	
-	
-	
+
 </section>
 </div>
 

@@ -1,6 +1,8 @@
 @charset "UTF-8";
 
-
+#wrap {
+	width:800px;
+}
 .header-box{
 	height:100px;
 }
@@ -60,15 +62,20 @@
 }
 
 .contents-box {
-	width:700px;
-	height:600px;
+	height:50px;
+}
+
+
+.contents-box2 {
+	height:100px;
+	background: red;
 }
 
 
 .circle {
 	width: 80px;
       height: 80px;
-      background: pink;
+      background:#c0c0c0;
       border-radius: 50%;
       display: block;
       margin-left: 50px;
@@ -76,7 +83,8 @@
 .rectangle {
       width: 60px;
       height: 25px;
-      background: pink;
+      background:#c0c0c0;
+      margin-top:27px;
     }
 .textarea{
 	border:1px solid #c0c0c0
@@ -116,6 +124,17 @@
 .comment-write {
 	margin-left:260px;
 	width:500px;
+}
+.upload-btn {
+	width:80px;
+	height:40px;
+	margin-left:50px;
+}
+.write-div {
+	margin-left:60px;
+	margin-top:10px;
+	height:500px;
+	background: #d5d5d5;
 }
 
 
