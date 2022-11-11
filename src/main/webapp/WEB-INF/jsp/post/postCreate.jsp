@@ -30,7 +30,7 @@
 <div id="wrap" class="container">
 <header>
 	<div class="d-flex justify-content-center">
-	<div><h3 class="mt-2">게시물 만들기</h3></div>
+	<div><h3 class="mt-2 ml-5">게시물 만들기</h3></div>
 	</div>
 </header>
 <nav>
@@ -41,20 +41,27 @@
 		<div class="circle"></div>
 		<div class="rectangle btn ml-3 pb-4">${userName}</div>
 	</div>
-		<button type="button" class="upload-btn btn btn-primary mt-4">업로드</button>
+		<button type="button" class="upload-btn btn btn-primary mt-5">업로드</button>
 	</div>
 </nav>
 <section>
-	<div class="write-div">
+	<div class="write-div card border rounded">
 	<a href="#" class="text-white">무슨 생각을 하고 계신가요?</a>
-	</div>
-	
-	<div class="d-flex justify-content-end mr-2 pt-2">
-		<div class="mt-1 mr-1">파일 업로드</div>
-		<a href="#" id="fileUploadBtn"><img width="35" src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-image-512.png"></a>
 	</div>
 
 </section>
+
+<footer>
+	<div class="img-file-upload d-flex justify-content-start mr-2 pt-2">
+		<div class="post-detail-file mt-1"></div>
+		
+		<input type="file" id="file" class="d-none" accept=".gif, .jpg, .png, .jpeg">
+		<%-- 이미지에 마우스 올리면 마우스커서가 링크 커서가 변하도록 a 태그 사용 --%>
+		<a href="#" id="fileUploadBtn"><img width="35"
+		src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-image-512.png"></a>
+		
+	</div>
+</footer>
 </div>
 	
 		

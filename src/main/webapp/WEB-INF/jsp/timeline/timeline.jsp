@@ -29,8 +29,8 @@
 <body>
 <div class="d-flex justify-content-center">
 <header id="timelineHeader">
-	<div class="d-flex justify-content-between">
-		<h2>Facebook</h2>
+	<div class="d-flex justify-content-between mt-3">
+		<h2 id="facebook">Facebook</h2>
 		<div>
 		<button type="button" class="btn">${userName}</button>
 		<button type="submit" class="btn ml-4">로그아웃</button>
@@ -45,14 +45,24 @@
 	<!-- 원 옆에 내 게시물, 글쓰기페이지 -->
 		<div class="timeline-div1">
 		<div class="d-flex justify-content-end">
-		<button type="button" id="timelineMyPage" class="btn text-dark">내 게시물</button>
 		</div>
-		<div class="timeline-write mt-1">
-		<a href="/post/post_create_view" class="text-dark">무슨 생각을 하고 계신가요?</a>
+		<div>
 		
-	<div class="d-flex justify-content-end mr-2 pt-2">
-		<a href="#" id="fileUploadBtn"><img width="35" src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-image-512.png"></a>
-	</div>
+		<div class="d-flex">
+		<a href="/post/post_create_view">
+			<div class="timeline-div">무슨 생각을 하고 계신가요?</div>
+		</a>
+		<div class="ml-5 mt-3">
+			<%-- file 태그는 숨겨두고 이미지를 클릭하면 file 태그를 클릭한 것처럼 이벤트를 줄 것이다. --%>
+			<input type="file" id="file" class="d-none" accept=".gif, .jpg, .png, .jpeg">
+			<%-- 이미지에 마우스 올리면 마우스커서가 링크 커서가 변하도록 a 태그 사용 --%>
+			<a href="#" id="fileUploadBtn"><img width="35"
+			src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-image-512.png"></a>
+
+			<%-- 업로드 된 임시 파일 이름 저장될 곳 --%>
+			<div id="fileName" class="ml-2"></div>
+			</div>
+		</div>
 		</div>
 		</div>	
 	</div>
@@ -91,6 +101,29 @@
 </section>
 </div>
 
+<script>
+	$(document).ready(function() {
+		// facebook hover 효과
+		$('#facebook').hover(function() {
+			$(this).css('color', 'blue');
+			$(this).css('cursor', 'pointer');
+		},function() {
+			$(this).css('color', 'black');
+		}); // facebook hover 끝
+		
+		// facebook 로고 클릭 시 화면 리로드
+		$('#facebook').on('click', function() {
+			location.reload();
+		});	// facebook reload 끝
+		
+		// 파일 업로드 이미지 클릭 시 글쓰기 페이지로 이동
+		$('#fileUploadBtn').on('click', function() {
+			location.href="/post/post_create_view";
+		});	// 파일 업로드 이미지 끝
+		
+	
+	}); // ready 끝
+</script>
 
 
 

@@ -138,6 +138,21 @@
 }
 
 
+footer {
+	width:710px;
+	height:50px;
+	margin-left:60px;
+}
+.footer-btn {
+	margin-left: 260px;
+}
+.timeline-div {
+	width:420px;
+	height:70px;
+	background-color: #f8f8f8;
+}
+
+
 
 
 
