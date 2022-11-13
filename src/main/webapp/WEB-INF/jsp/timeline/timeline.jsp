@@ -121,7 +121,8 @@
 			location.href="/post/post_create_view";
 		});	// 파일 업로드 이미지 끝
 		
-	
+		
+		
 	}); // ready 끝
 </script>
 
