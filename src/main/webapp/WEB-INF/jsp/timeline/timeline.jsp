@@ -71,17 +71,25 @@
 	<!-- timeline 2  -->
 	
 	<%-- 타임라인 영역 --%>
-		<div class="timeline-div2 my-5">
+		<div class="timeline-box my-5">
 			<c:forEach items="${postList}" var="post">
 			
 			<%-- 카드1 --%>
 			<div class="card border rounded mt-3">
-				
-				
+				<%-- 글쓴이, 더보기(삭제) --%>
+				<div class="p-2 d-flex justify-content-between">
+					<span class="font-weight-bold">${card.user.loginId}</span>
+					<%-- 내가 쓴 글일 때만 더보기 노출 --%>
+					<c:if test="${userId eq card.user.id}">
+					<a href="#" class="more-btn" data-toggle="modal" data-target="#modal" data-post-id="${card.post.id}">
+						<img src="https://www.iconninja.com/files/860/824/939/more-icon.png" width="30">
+					</a>
+					</c:if>
+				</div>
 				
 				<%-- 카드 이미지 --%>
 				<div class="card-img">
-					<img src="${post.imagePath}" class="w-100" alt="본문 이미지" height="150px">
+					<img src="${post.imagePath}" class="w-100" alt="본문 이미지">
 				</div>
 				
 				<%-- 좋아요 --%>
@@ -121,38 +129,16 @@
 					</div>
 					</c:forEach>
 					<%-- 댓글 쓰기 --%>
-					<div class="comment-write d-flex border-top mt-2 mr-5">
-						<input type="text" class="form-control border-0 mr-2" placeholder="댓글 달기"/> 
+					<div class="comment-box d-flex justify-content-start">
+					<div class="d-flex">
+						<input type="text" class="comment-input form-control border-0 mr-2" placeholder="댓글 달기"/> 
 						<button type="button" class="comment-btn btn btn-light" data-post-id="${card.post.id}">게시</button>
+					</div>
 					</div>
 				</div>
 			</div> <%--// 카드1 닫기 --%>
 			</c:forEach>
 		</div> <%--// 타임라인 영역 닫기  --%>
-	
-<!-- 	<div class="timeline-div3 d-flex justify-content-between mt-2">
-		<div class="card-like">
-			<a href="#" class="like-btn text-dark">
-				<img src="https://t1.daumcdn.net/cfile/tistory/2275AE4055E8082C25" width="18px" height="18px" alt="empty heart">				
-				좋아요 10개
-			</a>
-				
-		</div>
-		<div>
-			<a href="#" class="text-dark">
-				<img src="https://www.nail25.com/img/footer_mystyle_unactive_icon_jh.png" width="18px" height="18px" alt="empty heart">
-				댓글 달기
-			</a>
-				
-		</div>
-		<div>댓글개수</div>
-	</div> -->
-	
-	<%-- 댓글 쓰기 --%>
-	<%-- <div class="comment-write d-flex border-top mt-2">
-	<input type="text" class="form-control border-0 mr-2" placeholder="댓글을 입력하세요..."/> 
-	<button type="button" class="comment-btn btn btn-light" data-post-id="${post.id}">게시</button>
-	</div> --%>
 	
 
 </section>
