@@ -46,23 +46,36 @@
 </nav>
 <section>
 	<div class="write-div card border rounded">
-	<a href="#" class="text-white">무슨 생각을 하고 계신가요?</a>
+	
 	</div>
 </section>
 <footer>
-	<div class="img-file-upload d-flex justify-content-start mr-2 pt-2">
+	<div class="img-file-upload d-flex justify-content-end mr-2 pt-2">
+	
 		<div class="post-detail-file mt-1"></div>
-		<input type="file" id="file" accept=".jpg,.jpeg,.png,.gif">
+		
+		<div class="file-upload d-flex justify-content-start">
+		<%-- file 태그는 숨겨두고 이미지를 클릭하면 file 태그를 클릭한 것처럼 이벤트를 줄 것이다. --%>
+			<input type="file" id="file" class="d-none" accept=".gif, .jpg, .png, .jpeg">
+		<%-- 이미지에 마우스 올리면 마우스커서가 링크 커서가 변하도록 a 태그 사용 --%>
+			<a href="#" id="fileUploadBtn"><img width="35" src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-image-512.png"></a>
+
+		<%-- 업로드 된 임시 파일 이름 저장될 곳 --%>
+			<div id="fileName" class="ml-2">
+		</div>
+		
+		</div>
 		<div class="footer-btn d-flex">
 			<button type="button" id="changeBtn" class="btn-success form-control">수정</button>
 			<button type="button" id="deleteBtn" class="btn-secondary form-control ml-4">삭제</button>
 		</div>
+		
+		
 	</div>
 </footer>
 </div>
 	
-		
-	<!-- 폼태그 -->
+	
 		
 
 

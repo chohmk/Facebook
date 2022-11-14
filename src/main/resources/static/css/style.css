@@ -112,7 +112,7 @@
 	margin-top:20px;
 	width:500px;
 	height:500px;
-	background-color: red;
+	
 }
 
 .timeline-div3 {
@@ -152,7 +152,13 @@ footer {
 	background-color: #f8f8f8;
 }
 
-
+.logout-btn {
+	color:#696969;
+	background-color: #eeeeee;
+}
+.file-upload {
+	margin-right:250px;
+}
 
 
 

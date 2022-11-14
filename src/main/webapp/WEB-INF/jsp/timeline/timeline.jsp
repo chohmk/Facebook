@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,7 +34,7 @@
 		<h2 id="facebook">Facebook</h2>
 		<div>
 		<button type="button" class="btn">${userName}</button>
-		<button type="submit" class="btn ml-4">로그아웃</button>
+		<a href="/user/sign_out" class="logout-btn font-weight-bold ml-3 btn">로그아웃</a>
 		</div>
 	</div>
 </header>
@@ -69,11 +70,67 @@
 	
 	<!-- timeline 2  -->
 	
-	<div class="timeline-div2">
+	<%-- 타임라인 영역 --%>
+		<div class="timeline-div2 my-5">
+			<c:forEach items="${postList}" var="post">
+			
+			<%-- 카드1 --%>
+			<div class="card border rounded mt-3">
+				
+				
+				
+				<%-- 카드 이미지 --%>
+				<div class="card-img">
+					<img src="${post.imagePath}" class="w-100" alt="본문 이미지" height="150px">
+				</div>
+				
+				<%-- 좋아요 --%>
+				<div class="card-like m-3">
+					<a href="#" class="like-btn" data-user-id="${userId}" data-post-id="${card.post.id}">
+					<c:if test="${card.filledLike eq true}">
+						<img src="https://www.iconninja.com/files/527/809/128/heart-icon.png" width="18px" height="18px" alt="filled heart">
+					</c:if>
+					<c:if test="${card.filledLike eq false}">
+						<img src="https://www.iconninja.com/files/214/518/441/heart-icon.png" width="18px" height="18px" alt="empty heart">
+					</c:if>
+						좋아요 ${card.likeCount}개
+					</a>
+				</div>
+				
+				<%-- 글 --%>
+				<div class="card-post m-3">
+					<span class="font-weight-bold">${card.user.loginId}</span>
+					<span>${card.post.content}</span>
+				</div>
+				
+				<%-- 댓글 --%>
+				<div class="card-comment-desc border-bottom">
+					<div class="ml-3 mb-1 font-weight-bold">댓글</div>
+				</div>
+				<div class="card-comment-list m-2">
+					<%-- 댓글 목록 --%>
+					<c:forEach items="${card.commentList}" var="commentView">
+					<div class="card-comment m-1">
+						<span class="font-weight-bold">${commentView.user.loginId}:</span>
+						<span>${commentView.comment.content}</span>
+						
+						<%-- 댓글 삭제 버튼 --%>
+						<a href="#" class="commentDelBtn">
+							<img src="https://www.iconninja.com/files/603/22/506/x-icon.png" width="10px" height="10px">
+						</a>
+					</div>
+					</c:forEach>
+					<%-- 댓글 쓰기 --%>
+					<div class="comment-write d-flex border-top mt-2 mr-5">
+						<input type="text" class="form-control border-0 mr-2" placeholder="댓글 달기"/> 
+						<button type="button" class="comment-btn btn btn-light" data-post-id="${card.post.id}">게시</button>
+					</div>
+				</div>
+			</div> <%--// 카드1 닫기 --%>
+			</c:forEach>
+		</div> <%--// 타임라인 영역 닫기  --%>
 	
-	</div>
-	
-	<div class="timeline-div3 d-flex justify-content-between mt-2">
+<!-- 	<div class="timeline-div3 d-flex justify-content-between mt-2">
 		<div class="card-like">
 			<a href="#" class="like-btn text-dark">
 				<img src="https://t1.daumcdn.net/cfile/tistory/2275AE4055E8082C25" width="18px" height="18px" alt="empty heart">				
@@ -89,13 +146,13 @@
 				
 		</div>
 		<div>댓글개수</div>
-	</div>
+	</div> -->
 	
 	<%-- 댓글 쓰기 --%>
-	<div class="comment-write d-flex border-top mt-2">
+	<%-- <div class="comment-write d-flex border-top mt-2">
 	<input type="text" class="form-control border-0 mr-2" placeholder="댓글을 입력하세요..."/> 
 	<button type="button" class="comment-btn btn btn-light" data-post-id="${post.id}">게시</button>
-	</div>
+	</div> --%>
 	
 
 </section>
@@ -120,6 +177,9 @@
 		$('#fileUploadBtn').on('click', function() {
 			location.href="/post/post_create_view";
 		});	// 파일 업로드 이미지 끝
+		
+		
+		
 		
 		
 		

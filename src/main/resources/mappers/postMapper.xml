@@ -22,4 +22,32 @@
 			,NOW()
 		)
  	</insert>
+ 	
+ 	<!-- 글 목록 select -->
+ 	<select id="selectPostList" resultType="com.facebook.post.model.Post">
+		SELECT
+			`id`
+			,`userId`
+			,`content`
+			,`imagePath`
+			,`createdAt`
+			,`updatedAt`
+		FROM
+			`post`
+		ORDER BY `id` DESC
+	</select>
+	
+	<select id="selectPostById" resultType="com.facebook.post.model.Post">
+		SELECT
+			`id`
+			,`userId`
+			,`content`
+			,`imagePath`
+			,`createdAt`
+			,`updatedAt`
+		FROM
+			`post`
+		WHERE
+			`id` = #{id}
+	</select>
  </mapper>

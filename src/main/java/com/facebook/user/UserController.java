@@ -1,7 +1,8 @@
 package com.facebook.user;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 // 유저에 관해서
@@ -29,5 +30,20 @@ public class UserController {
 	public String signInView() {
 		
 		return "user/signIn";
+	}
+	
+	/**
+	 * 로그아웃 화면
+	 * @param session
+	 * @return
+	 */
+	@RequestMapping("sign_out")
+	public String signOut(HttpSession session) {
+		session.removeAttribute("userName");
+		session.removeAttribute("userLoginId");
+		session.removeAttribute("userId");
+		
+		return "redirect:/user/sign_in_view";
+		
 	}
 }
