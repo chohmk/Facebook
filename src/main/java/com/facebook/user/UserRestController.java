@@ -81,8 +81,8 @@ public class UserRestController {
 	// 로그인
 	@PostMapping("sign_in")
 	public Map<String, Object> signIn(
-			@RequestParam("") String loginId,
-			@RequestParam("") String password,
+			@RequestParam("loginId") String loginId,
+			@RequestParam("password") String password,
 			HttpSession session) {
 		
 		// 암호화

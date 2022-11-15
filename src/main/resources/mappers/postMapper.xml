@@ -37,7 +37,8 @@
 		ORDER BY `id` DESC
 	</select>
 	
-	<select id="selectPostById" resultType="com.facebook.post.model.Post">
+	<!-- 글 하나의 postId -->
+	<select id="selectPostById" parameterType="int" resultType="com.facebook.post.model.Post">
 		SELECT
 			`id`
 			,`userId`

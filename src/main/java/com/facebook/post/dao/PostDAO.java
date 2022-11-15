@@ -20,5 +20,6 @@ public interface PostDAO {
 	// 글 목록 select
 	public List<Post> selectPostList();
 	
+	// 글 하나의 postId select
 	public Post selectPostByPostId(int Id);
 }

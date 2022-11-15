@@ -76,20 +76,13 @@
 			
 			<%-- 카드1 --%>
 			<div class="card border rounded mt-3">
-				<%-- 글쓴이, 더보기(삭제) --%>
-				<div class="p-2 d-flex justify-content-between">
-					<span class="font-weight-bold">${card.user.loginId}</span>
-					<%-- 내가 쓴 글일 때만 더보기 노출 --%>
-					<c:if test="${userId eq card.user.id}">
-					<a href="#" class="more-btn" data-toggle="modal" data-target="#modal" data-post-id="${card.post.id}">
-						<img src="https://www.iconninja.com/files/860/824/939/more-icon.png" width="30">
-					</a>
-					</c:if>
+				<div>
+					<span></span>
 				</div>
 				
 				<%-- 카드 이미지 --%>
 				<div class="card-img">
-					<img src="${post.imagePath}" class="w-100" alt="본문 이미지">
+					<img src="${post.imagePath}" class="w-100" alt="본문 이미지" id="imageClick" data-post-id="${post.id}">
 				</div>
 				
 				<%-- 좋아요 --%>
@@ -165,10 +158,16 @@
 		});	// 파일 업로드 이미지 끝
 		
 		
-		
-		
-		
-		
+		// 이미지클릭
+		// 이벤트 다시잡기
+		$('#imageClick').on('click', function() {
+			
+			let postId = $(this).data('post-id');
+			
+			location.href="/post/post_detail_view?id=" + postId;
+			alert(postId);
+		});
+		// javax.el.PropertyNotFoundException 내부 서버 오류
 	}); // ready 끝
 </script>
 

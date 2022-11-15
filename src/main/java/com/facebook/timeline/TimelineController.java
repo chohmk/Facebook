@@ -28,6 +28,7 @@ public class TimelineController {
 		//List<Post> postList = postBO.getPostList();
 		Integer userId = (Integer)session.getAttribute("userId");
 		List<Post> postList = postBO.getPostList();
+		
 
 		model.addAttribute("postList", postList);
 
@@ -35,3 +36,5 @@ public class TimelineController {
 	}
 }
 // org.apache.ibatis.builder.BuilderException
+// javax.el.PropertyNotFoundException
+// 에러가 나는 이유는 스펠링이 틀리거나 공백이 있어서가 대부분이지만

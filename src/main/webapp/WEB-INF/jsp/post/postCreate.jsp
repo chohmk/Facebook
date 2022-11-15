@@ -137,7 +137,7 @@
 			, contentType: false    // 파일 업로드를 위한 필수 설정
 			, success: function(data) {
 				if (data.code == 100) {
-					location.reload();
+					location.href="/timeline/timeline_view";
 					alert("성공");
 				} else if (data.code == 300) { // 비로그인 일 때
 					location.href = "/user/sign_in_view";

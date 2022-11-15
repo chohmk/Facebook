@@ -35,6 +35,7 @@ public class PostBO {
 		return postDAO.selectPostList();
 	}
 	
+	// 글 하나의 postId
 	public Post getPostByPostId(int postId) {
 		return postDAO.selectPostByPostId(postId);
 	}

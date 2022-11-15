@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>      
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,14 +47,14 @@
 </nav>
 <section>
 	<div class="write-div card border rounded">
-	
+		<div>${post.id}</div>
 	</div>
 </section>
 <footer>
 	<div class="img-file-upload d-flex justify-content-end mr-2 pt-2">
 	
 		<div class="post-detail-file mt-1"></div>
-		
+			
 		<div class="file-upload d-flex justify-content-start">
 		<%-- file 태그는 숨겨두고 이미지를 클릭하면 file 태그를 클릭한 것처럼 이벤트를 줄 것이다. --%>
 			<input type="file" id="file" class="d-none" accept=".gif, .jpg, .png, .jpeg">
