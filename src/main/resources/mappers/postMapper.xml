@@ -38,7 +38,7 @@
 	</select>
 	
 	<!-- 글 하나의 postId -->
-	<select id="selectPostById" parameterType="int" resultType="com.facebook.post.model.Post">
+	<select id="selectPostByPostId" parameterType="int" resultType="com.facebook.post.model.Post">
 		SELECT
 			`id`
 			,`userId`

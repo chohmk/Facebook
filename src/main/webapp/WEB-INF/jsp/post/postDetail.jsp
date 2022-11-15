@@ -45,11 +45,15 @@
 		<a href="/post/post_create_view" class="btn btn-primary h-50 mt-5">글쓰기</a>
 	</div>
 </nav>
+
+<!-- **************************************************** -->
 <section>
 	<div class="write-div card border rounded">
-		<div>${post.id}</div>
+		<img src="${post.imagePath}" alt="이미지" height="600px"></img>
 	</div>
 </section>
+
+<!-- **************************************************** -->
 <footer>
 	<div class="img-file-upload d-flex justify-content-end mr-2 pt-2">
 	

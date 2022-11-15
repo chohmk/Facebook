@@ -73,18 +73,19 @@
 	<%-- 타임라인 영역 --%>
 		<div class="timeline-box my-5">
 			<c:forEach items="${postList}" var="post">
-			
+			<!-- **************************************************** -->
 			<%-- 카드1 --%>
 			<div class="card border rounded mt-3">
 				<div>
-					<span></span>
+					<span class="font-weight-bold text-primary">${userName}</span>
 				</div>
 				
 				<%-- 카드 이미지 --%>
-				<div class="card-img">
-					<img src="${post.imagePath}" class="w-100" alt="본문 이미지" id="imageClick" data-post-id="${post.id}">
+				<div class="card-img" id="imageClick" data-post-id="${post.id}">
+					<img src="${post.imagePath}" class="w-100" alt="본문 이미지">
 				</div>
 				
+			<!-- **************************************************** -->
 				<%-- 좋아요 --%>
 				<div class="card-like m-3">
 					<a href="#" class="like-btn" data-user-id="${userId}" data-post-id="${card.post.id}">
@@ -167,7 +168,7 @@
 			location.href="/post/post_detail_view?id=" + postId;
 			alert(postId);
 		});
-		// javax.el.PropertyNotFoundException 내부 서버 오류
+		
 	}); // ready 끝
 </script>
 
