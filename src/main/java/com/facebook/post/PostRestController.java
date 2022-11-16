@@ -54,6 +54,14 @@ public class PostRestController {
 		
 	}
 	
+	/**
+	 * 수정 API
+	 * @param postId
+	 * @param content
+	 * @param file
+	 * @param session
+	 * @return
+	 */
 	@PutMapping("/update")
 	public Map<String, Object> update(
 			@RequestParam("postId") int postId, 
@@ -63,7 +71,18 @@ public class PostRestController {
 		int userId = (int)session.getAttribute("userId");
 		String userLoginId = (String)session.getAttribute("userLoginId");
 		
+		int count = postBO.updatePost(postId, userId, userLoginId, content, file);
 		
+		Map<String, Object> result = new HashMap<>();
+		if (count > 0) {
+			result.put("code", 100); // 성공
+		} else {
+			result.put("code", 400); // 실패
+			result.put("errorMessage", "수정 실패");
+		}
+		return result;
 		
+		// [org.springframework.web.multipart.support.MissingServletRequestPartException
+		// 이미지 교체안하면 오류뜸
 	}
 }

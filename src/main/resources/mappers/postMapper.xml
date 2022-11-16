@@ -51,4 +51,14 @@
 		WHERE
 			`id` = #{id}
 	</select>
+	
+	<!-- 수정 update -->
+	<update id="updatePost" parameterType="map">
+		UPDATE `post`
+		SET
+			`content` = #{content}
+			, `imagePath` = #{imagePath}
+		WHERE
+			`id` = #{postId}
+	</update>
  </mapper>
