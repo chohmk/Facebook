@@ -133,8 +133,6 @@
 .write-div {
 	margin-left:60px;
 	margin-top:10px;
-	
-	background: #d5d5d5;
 }
 
 
@@ -167,6 +165,25 @@ footer {
 .comment-input {
 	width:520px;
 }
+
+.card-content {
+	height:100px;
+}
+
+.detail-content {
+	background-color:#f7f7f7;
+	height:100px;
+}
+.detail-btn {
+	height:35px;
+	width:65px;
+	margin-left:10px;
+}
+.file-name {
+	margin-right: 120px;
+}
+
+
 
 
 

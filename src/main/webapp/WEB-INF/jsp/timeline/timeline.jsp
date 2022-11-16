@@ -75,13 +75,19 @@
 			<c:forEach items="${postList}" var="post">
 			<!-- **************************************************** -->
 			<%-- 카드1 --%>
+			
 			<div class="card border rounded mt-3">
 				<div>
 					<span class="font-weight-bold text-primary">${userName}</span>
 				</div>
 				
+				<!-- 카드 내용 -->
+				<div class="card-content">
+					<span>${post.content}</span>
+				</div>
+				
 				<%-- 카드 이미지 --%>
-				<div class="card-img" id="imageClick" data-post-id="${post.id}">
+				<div class="image-click card-img" data-post-id="${post.id}">
 					<img src="${post.imagePath}" class="w-100" alt="본문 이미지">
 				</div>
 				
@@ -160,8 +166,7 @@
 		
 		
 		// 이미지클릭
-		// 이벤트 다시잡기
-		$('#imageClick').on('click', function() {
+		$('.image-click').on('click', function() {
 			
 			let postId = $(this).data('post-id');
 			

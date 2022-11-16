@@ -17,7 +17,11 @@ import com.facebook.post.model.Post;
 @Controller
 @RequestMapping("/timeline")
 
-// 타임라인
+/**
+ * 타임라인 화면
+ * @author mega
+ *
+ */
 public class TimelineController {
 	@Autowired
 	private PostBO postBO;
@@ -35,6 +39,4 @@ public class TimelineController {
 		return "timeline/timeline";
 	}
 }
-// org.apache.ibatis.builder.BuilderException
-// javax.el.PropertyNotFoundException
-// 에러가 나는 이유는 스펠링이 틀리거나 공백이 있어서가 대부분이지만
+

@@ -25,7 +25,12 @@ public class PostController {
 		return "post/postCreate";
 	}
 	
-	// 내 게시물
+	/**
+	 *  내 게시물
+	 * @param id
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping("/post_detail_view")
 	public String postDetailView(
 			@RequestParam("id") int id,
