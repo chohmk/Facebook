@@ -30,4 +30,7 @@ public interface PostDAO {
 			@Param("userId") int userId, 
 			@Param("content") String content, 
 			@Param("imagePath") String imagePath );
+	
+	// 삭제 delete
+	public void deletePostByPostId(int id);
 }

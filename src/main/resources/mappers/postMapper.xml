@@ -57,8 +57,18 @@
 		UPDATE `post`
 		SET
 			`content` = #{content}
-			, `imagePath` = #{imagePath}
+			<!-- imagePath가 있을 때만 수정한다. -->
+			<if test="imagePath != null">, `imagePath` = #{imagePath}</if>
 		WHERE
 			`id` = #{postId}
 	</update>
+	
+	<!-- 삭제 delete -->
+	<delete id="deletePostByPostId" parameterType="int">
+		DELETE 
+		FROM
+			`post`
+		WHERE
+			`id` = #{postId}
+	</delete>
  </mapper>

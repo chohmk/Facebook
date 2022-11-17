@@ -62,4 +62,14 @@ public class PostBO {
 		}
 		return postDAO.updatePost(postId, userId, content, imagePath);
 	}
+	
+	// 삭제 delete
+	public void deletePostByPostId(int id) {
+		// 기존 글 가져오기
+		Post post = getPostByPostId(id);
+		if (post.getImagePath() != null) {
+			fileManagerService.deleteFile(post.getImagePath());
+		}
+		postDAO.deletePostByPostId(id);
+	}
 }

@@ -47,7 +47,7 @@
 </nav>
 <section>
 	<div class="write-box border rounded m-3 ml-5">
-			<textarea id="writeTextArea" placeholder="내용을 입력해주세요" class="w-100 border-0" rows="20"></textarea>
+			<textarea id="writeTextArea" placeholder="내용을 입력해주세요" class="w-100 border-0" rows="20" ></textarea>
 				
 			<%-- 이미지 업로드를 위한 아이콘과 업로드 버튼을 한 행에 멀리 떨어뜨리기 위한 div --%>
 			<div class="d-flex justify-content-between">

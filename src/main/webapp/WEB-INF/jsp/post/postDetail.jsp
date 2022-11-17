@@ -53,7 +53,7 @@
 <!-- **************************************************** -->
 <section>
 	<div class="write-div card border rounded">
-		<textarea class="form-control" rows="5" cols="50" id="content" placeholder="내용을 입력해주세요">${post.content}</textarea>
+		<textarea class="form-control"  id="content" placeholder="내용을 입력해주세요">${post.content}</textarea>
 		<img src="${post.imagePath}" alt="업로드 이미지" >
 	</div>
 </section>
@@ -157,6 +157,28 @@
 				}
 			});
 		}); // 수정 끝
+		// 삭제 
+		$('#deleteBtn').on('click', function() {
+			let postId = $(this).data('post-id');
+			
+			// 삭제 ajax
+			$.ajax({
+				type:"DELETE"
+				, url:"/post/delete"
+				, data:{"postId":postId}
+				, success: function(data) {
+					if (data.code == 100) {
+						alert("삭제되었습니다.");
+						location.href="/timeline/timeline_view";
+					} else {
+						alert(data.errorMessage);
+					}
+				}
+				, error: function(e) {
+					alert("삭제에 실패하였습니다.");
+				}
+			});
+		});	// 삭제 끝
 		
 		
 		

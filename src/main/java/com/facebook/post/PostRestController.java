@@ -6,6 +6,7 @@ import java.util.Map;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -66,7 +67,7 @@ public class PostRestController {
 	public Map<String, Object> update(
 			@RequestParam("postId") int postId, 
 			@RequestParam("content") String content, 
-			@RequestParam("file") MultipartFile file, 
+			@RequestParam(value="file", required=false) MultipartFile file, 
 			HttpSession session) {
 		int userId = (int)session.getAttribute("userId");
 		String userLoginId = (String)session.getAttribute("userLoginId");
@@ -82,7 +83,19 @@ public class PostRestController {
 		}
 		return result;
 		
-		// [org.springframework.web.multipart.support.MissingServletRequestPartException
-		// 이미지 교체안하면 오류뜸
+		
+	}
+	@DeleteMapping("/delete")
+	public Map<String, Object> delete(
+			@RequestParam("postId") int id) {
+		
+		// DB delte
+		postBO.deletePostByPostId(id);
+		
+		Map<String, Object> result = new HashMap<>();
+		result.put("code",100);
+		result.put("result", "success");
+		
+		return result;
 	}
 }
