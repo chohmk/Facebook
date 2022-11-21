@@ -17,20 +17,24 @@ import com.facebook.post.model.Post;
 @Controller
 @RequestMapping("/timeline")
 
-/**
- * 타임라인 화면
- * @author mega
- *
- */
+
 public class TimelineController {
 	@Autowired
 	private PostBO postBO;
 	
+/**
+ * 타임라인 화면
+ * @param model
+ * @param session
+ * @return
+ */
 	@RequestMapping("/timeline_view")
 	public String TimelineView(Model model, HttpSession session) {
 	
 		//List<Post> postList = postBO.getPostList();
 		Integer userId = (Integer)session.getAttribute("userId");
+		List<CardView> cardViewList = timelineBO
+		
 		List<Post> postList = postBO.getPostList();
 		
 

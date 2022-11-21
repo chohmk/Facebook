@@ -132,7 +132,7 @@
 					<div class="comment-box d-flex justify-content-start">
 					<div class="d-flex">
 						<input type="text" class="comment-input form-control border-0 mr-2" placeholder="댓글 달기"/> 
-						<button type="button" class="comment-btn btn btn-light" data-post-id="${card.post.id}">게시</button>
+						<button type="button" class="comment-btn btn btn-light" data-post-id="${post.id}">게시</button>
 					</div>
 					</div>
 				</div>
@@ -172,6 +172,35 @@
 			
 			location.href="/post/post_detail_view?id=" + postId;
 			alert(postId);
+		});
+		
+		// 댓글 게시버튼 클릭
+		$('.comment-btn').on('click', function() {
+			let postId = $(this).data('post-id');
+			// alert(postId);
+			let comment = $(this).siblings('input').val().trim();
+			// alert(comment);
+			if (comment == '') {
+				alert("댓글을 입력하세요.");
+				return;
+			}
+			// 댓글 ajax
+			$.ajax ({
+				type:"POST"
+				, url:"/comment/create"
+				, data: {"postId":postId, "content":comment}
+				, success:function(data) {
+					if(data.result == "success") {
+						location.reload();
+					} else if (data.code == 300) {
+						alert("로그인을 해주세요");
+						location.href="/user/sign_in_view";
+					} 
+				}
+				, error:function(e) {
+					alert("댓글 오류");
+				}
+			}); 
 		});
 		
 	}); // ready 끝

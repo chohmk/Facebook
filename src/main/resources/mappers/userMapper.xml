@@ -49,5 +49,21 @@
 		AND 
 			`password` = #{password}
  	</select>
+ 	
+ 	<!-- 글쓴이 정보 select -->
+ 	<select id="selectUserById" parameterType="int" resultType="com.facebook.user.model.User">
+ 		SELECT
+ 		 	`id` 
+			,`loginId`
+			, `password`
+			, `name`
+			, `email`
+			, `createdAt`
+			, `updatedAt`
+		FROM
+			`user`
+		WHERE
+			`id` = #{id}
+ 	</select>
  </mapper>
  
