@@ -72,23 +72,23 @@
 	
 	<%-- 타임라인 영역 --%>
 		<div class="timeline-box my-5">
-			<c:forEach items="${postList}" var="post">
+			<c:forEach items="${cardList}" var="card">
 			<!-- **************************************************** -->
 			<%-- 카드1 --%>
 			
 			<div class="card border rounded mt-3">
 				<div>
-					<span class="font-weight-bold text-primary">${userName}</span>
+					<span class="font-weight-bold text-primary">${card.user.loginId}</span>
 				</div>
 				
 				<!-- 카드 내용 -->
 				<div class="card-content">
-					<span>${post.content}</span>
+					<span>${card.post.content}</span>
 				</div>
 				
 				<%-- 카드 이미지 --%>
-				<div class="image-click card-img" data-post-id="${post.id}">
-					<img src="${post.imagePath}" class="w-100" alt="본문 이미지">
+				<div class="image-click card-img" data-post-id="${card.post.id}">
+					<img src="${card.post.imagePath}" class="w-100" alt="본문 이미지">
 				</div>
 				
 			<!-- **************************************************** -->
@@ -123,7 +123,7 @@
 						<span>${commentView.comment.content}</span>
 						
 						<%-- 댓글 삭제 버튼 --%>
-						<a href="#" class="commentDelBtn">
+						<a href="#"  class="commentDelBtn" data-post-id="${commentView.comment.content}">
 							<img src="https://www.iconninja.com/files/603/22/506/x-icon.png" width="10px" height="10px">
 						</a>
 					</div>
@@ -132,7 +132,7 @@
 					<div class="comment-box d-flex justify-content-start">
 					<div class="d-flex">
 						<input type="text" class="comment-input form-control border-0 mr-2" placeholder="댓글 달기"/> 
-						<button type="button" class="comment-btn btn btn-light" data-post-id="${post.id}">게시</button>
+						<button type="button" class="comment-btn btn btn-light" data-post-id="${card.post.id}">게시</button>
 					</div>
 					</div>
 				</div>
@@ -201,7 +201,14 @@
 					alert("댓글 오류");
 				}
 			}); 
+		}); // 댓글 게시 버튼 끝
+		// 댓글 삭제
+		$('.commentDelBtn').on('click', function(e) {
+			e.preventDefault();
+			let commentPostId = $(this).data('post-id');
+			alert(commentPostId);
 		});
+	
 		
 	}); // ready 끝
 </script>

@@ -24,7 +24,7 @@
  	</insert>
  	
  	<!-- 댓글 목록 select -->
- 	<select id="selectCommentListByPostId" parameterType="int" resultType="com.sns.comment.model.Comment">
+ 	<select id="selectCommentListByPostId" parameterType="int" resultType="com.facebook.comment.model.Comment">
  		SELECT
 			`id`
 			,`userId`

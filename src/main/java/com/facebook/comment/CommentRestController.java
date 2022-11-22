@@ -42,7 +42,7 @@ public class CommentRestController {
 			result.put("errorMessage", "로그인을 해주세요");
 			return result;
 		}
-		commentBO.createComment(postId, postId, content);
+		commentBO.createComment(userId, postId, content);
 		result.put("code", 100);
 		result.put("result", "success");
 		return result;
