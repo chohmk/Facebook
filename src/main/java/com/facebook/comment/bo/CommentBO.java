@@ -55,4 +55,9 @@ public class CommentBO {
 		// 리스트 리턴
 		return commentViewList;
 	}
+	
+	// 댓글 삭제
+	public void deleteCommentsById(int id) {
+		commentDAO.deleteCommentsById(id);
+	}
 }

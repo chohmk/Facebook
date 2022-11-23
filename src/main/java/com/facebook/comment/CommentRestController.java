@@ -6,6 +6,7 @@ import java.util.Map;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -45,6 +46,25 @@ public class CommentRestController {
 		commentBO.createComment(userId, postId, content);
 		result.put("code", 100);
 		result.put("result", "success");
+		return result;
+	}
+	/**
+	 * 댓글 삭제 API
+	 * @param postId
+	 * @return
+	 */
+	@DeleteMapping("delete")
+	public Map<String, Object> deleteComment(
+			@RequestParam("id") int id) {
+
+		
+		commentBO.deleteCommentsById(id);
+		Map<String, Object> result = new HashMap<>();
+		result.put("code", 100); // 성공
+		result.put("result", "success");
+		
+		
+		
 		return result;
 	}
 }

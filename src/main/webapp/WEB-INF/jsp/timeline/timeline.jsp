@@ -123,7 +123,7 @@
 						<span>${commentView.comment.content}</span>
 						
 						<%-- 댓글 삭제 버튼 --%>
-						<a href="#"  class="commentDelBtn" data-post-id="${commentView.comment.content}">
+						<a href="#"  class="commentDelBtn" data-comment-id="${commentView.comment.id}">
 							<img src="https://www.iconninja.com/files/603/22/506/x-icon.png" width="10px" height="10px">
 						</a>
 					</div>
@@ -205,10 +205,45 @@
 		// 댓글 삭제
 		$('.commentDelBtn').on('click', function(e) {
 			e.preventDefault();
-			let commentPostId = $(this).data('post-id');
-			alert(commentPostId);
-		});
+			let commentId = $(this).data('comment-id');
+			alert(commentId);
+			
+		
+			
+			 $.ajax({
+				type:"DELETE"
+				, url: "/comment/delete"
+				, data: {"id":commentId}
+				, success: function(data) {
+					if (data.code == 100) {
+						alert("댓글이 삭제되었습니다.");
+						location.reload();
+					} else {
+						alert(data.errorMessage);
+					}
+				}
+				, error:function(e) {
+					alert("댓글 삭제 오류");
+				}
+			});
+		}); // 댓글 삭제 끝
 	
+		// 좋아요/해제 
+		$('.like-btn').on('click', function(e) {
+			e.preventDefault();
+			// 좋아요클릭하기 위해서 userId를 가져온다.
+			let userId = $(this).data('user-id');
+			alert(userId);
+			// userId가 null 이면 alert
+			if (userId == "") {
+				alert("로그인을 해주세요");
+				return;
+			}
+			// 좋아요를 클릭하는 글이 어떤건지 알기위해 postId를 가져온다.
+			let postId = $(this).data('post-id');
+			alert(postId);
+			
+		});
 		
 	}); // ready 끝
 </script>
