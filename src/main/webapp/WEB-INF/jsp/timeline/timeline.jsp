@@ -241,9 +241,24 @@
 			}
 			// 좋아요를 클릭하는 글이 어떤건지 알기위해 postId를 가져온다.
 			let postId = $(this).data('post-id');
-			alert(postId);
+			// alert(postId);
 			
-		});
+			// ajax
+			$.ajax({
+				url: "/like/" + postId
+				, success:function(data) {
+					if (data.code == 100) {
+						location.reload(true);
+					} else {
+						alert(data.errorMessage);
+					}
+				}
+				, error:function(e) {
+					alert("좋아요/해제 하는데 실패했습니다."); 
+				}
+			});
+			
+		}); // 좋아요 끝
 		
 	}); // ready 끝
 </script>
