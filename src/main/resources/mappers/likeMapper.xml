@@ -15,4 +15,40 @@
  			AND `userId` = #{userId}
  			</if>
  	</select>
+ 	
+ 	<!-- 좋아요 안눌려있으면 추가 insert -->
+ 	<insert id="insertLike" parameterType="map">
+ 		INSERT INTO `like`
+ 		(
+ 			`userId`
+			,`postId`
+			,`createdAt`
+ 		)
+ 		VALUES
+ 		(
+ 			#{userId}
+ 			, #{postId}
+ 			, NOW()
+ 		)
+ 			
+ 	</insert>
+ 	<!-- 좋아요 눌려있으면 삭제 -->
+ 	<delete id="deleteLikeByPostIdUserId" parameterType="map">
+ 		DELETE
+ 		FROM
+ 			`like`
+ 		WHERE
+ 			`postId` = #{postId}
+ 		AND
+ 			`userId` = #{userId}
+ 	</delete>
+ 	
+ 	
+ 	<delete id="deleteLikeByPostId" parameterType="int">
+ 		DELETE
+ 		FROM
+ 			`like`
+ 		WHERE
+ 			`postId` = #{postId}
+ 	</delete>
  </mapper>

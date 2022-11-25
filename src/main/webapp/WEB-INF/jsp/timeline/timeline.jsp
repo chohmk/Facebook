@@ -233,7 +233,7 @@
 			e.preventDefault();
 			// 좋아요클릭하기 위해서 userId를 가져온다.
 			let userId = $(this).data('user-id');
-			alert(userId);
+			// alert(userId);
 			// userId가 null 이면 alert
 			if (userId == "") {
 				alert("로그인을 해주세요");

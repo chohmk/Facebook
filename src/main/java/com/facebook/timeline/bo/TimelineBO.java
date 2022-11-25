@@ -59,7 +59,6 @@ public class TimelineBO {
 			card.setCommentList(commentList);
 			
 			// 내가 좋아요를 눌렀는지
-			// 설명필요
 			if (userId == null) {
 				card.setFilledLike(false);
 			} else {
@@ -77,15 +76,9 @@ public class TimelineBO {
 		return cardViewList;
 	}
 }
-// 좋아요 
-/**
- * 1. 좋아요 개수 가져오기위해 like BO, DAO, Mapper 만든다.(select)
- * 2. 타임라인화면(카드뷰에서 사용)에 보여야하기 때문에 timelineBO에 좋아요개수를 가져온다.
- * 3. timelineBo에서 내가 좋아요를 눌렀는지 if 문으로 확인 
- *    -> userId == null 이면 filledLike를 card에 담지 않는다.
- *    -> userId != null 이면 int count 변수에 likeBo에 있는 getLikeCountByPostIdOrUserId를 저장한다.
- *    -> 이해안됨
- *    -> 저장한 count를 card에 담는다.
- */
-		
+
+// java.sql.SQLSyntaxErrorException
+// insert mapper에서 ,를 빼먹어서 발생한 오류
+
+// deleteLikeByPostIdUserId
 
