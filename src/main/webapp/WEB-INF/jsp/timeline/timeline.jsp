@@ -33,7 +33,16 @@
 	<div class="d-flex justify-content-between mt-3">
 		<h2 id="facebook">Facebook</h2>
 		<div>
-		<button type="button" class="btn">${userName}</button>
+		<!-- 로그인 된 사람들만 보이게 -->
+		<c:if test="${not empty userName}">
+		<button type="button" class="btn">
+		${userName}
+		</button>
+		</c:if>
+		<c:if test="${empty userName}">
+			<a href="/user/sign_in_view" class="text-white font-weight-bold">로그인</a>
+		</c:if>
+		
 		<a href="/user/sign_out" class="logout-btn font-weight-bold ml-3 btn">로그아웃</a>
 		</div>
 	</div>
@@ -259,6 +268,7 @@
 			});
 			
 		}); // 좋아요 끝
+		
 		
 	}); // ready 끝
 </script>
