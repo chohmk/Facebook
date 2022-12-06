@@ -38,12 +38,11 @@
 		<button type="button" class="btn">
 		${userName}
 		</button>
+		<a href="/user/sign_out" class="logout-btn font-weight-bold ml-3 btn">로그아웃</a>
 		</c:if>
 		<c:if test="${empty userName}">
-			<a href="/user/sign_in_view" class="text-white font-weight-bold">로그인</a>
+		<a href="/user/sign_in_view"><button class="btn btn-primary">로그인</button></a>
 		</c:if>
-		
-		<a href="/user/sign_out" class="logout-btn font-weight-bold ml-3 btn">로그아웃</a>
 		</div>
 	</div>
 </header>
@@ -180,7 +179,7 @@
 			let postId = $(this).data('post-id');
 			
 			location.href="/post/post_detail_view?id=" + postId;
-			alert(postId);
+			
 		});
 		
 		// 댓글 게시버튼 클릭
@@ -215,7 +214,7 @@
 		$('.commentDelBtn').on('click', function(e) {
 			e.preventDefault();
 			let commentId = $(this).data('comment-id');
-			alert(commentId);
+			
 			
 		
 			

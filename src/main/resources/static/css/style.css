@@ -3,19 +3,18 @@
 #wrap {
 	width:800px;
 }
+
+
+/* 로그인 화면 signIn */
 .header-box{
 	height:100px;
 }
+
 .header-logo{
 	font-weight: bold;
 	font-size: 50px;
 }
 
-#signUpBox {
-	height:630px;
-	width:500px;
-	background-color: #eaeaea;
-}
 #signInBox {
 	height:400px;
 	width:400px;
@@ -26,14 +25,24 @@
 	width:350px;
 	height:48px;
 }
+
 .login-input-box input {
 	width:350px;
 	height:45px;
 }
+
 .sign-up-href {
 	width:300px;
 	height:50px;
 	font-size: 20px;
+}
+
+/* 회원가입 화면 signUp */
+
+#signUpBox {
+	height:630px;
+	width:500px;
+	background-color: #eaeaea;
 }
 
 #loginIdCheckBtn {
@@ -46,6 +55,7 @@
 	font-size: 15px;
 	color: #727272;
 }
+
 #signUpBtn {
 	height:60px;
 	background: #18db09;
@@ -55,22 +65,7 @@
 	font-size: 25px;
 }
 
-
-
-.contents {
-	height:600px;
-}
-
-.contents-box {
-	height:50px;
-}
-
-
-.contents-box2 {
-	height:100px;
-	background: red;
-}
-
+/* 글쓰기 화면 postCreate */
 
 .circle {
 	width: 80px;
@@ -80,70 +75,40 @@
       display: block;
       margin-left: 50px;
 }
+
 .rectangle {
       width: 60px;
       height: 25px;
       background:#c0c0c0;
       margin-top:27px;
-    }
+}
+
 .textarea{
 	border:1px solid #c0c0c0
 }
 
-#timelineHeader {
-	width: 700px;
-	height:100px;
-}
-#timelineSection {
-	width:900px;
-	height:800px;
-}
-.timeline-write {
-	width:500px;
-	height:80px;
-	background-color: #eeeeee;
-}
-
-.timeline-div1 {
-	margin-left: 130px;
-}
-.timeline-div2 {
-	margin-left:260px;
-	margin-top:20px;
-	width:500px;
-	height:500px;
-	
-}
-
-.timeline-div3 {
-	margin-left:260px;
-	width:500px;
-	height:40px;
-}
-
-.comment-write {
-	margin-left:260px;
-	width:500px;
-}
 .upload-btn {
 	width:80px;
 	height:40px;
 	margin-left:50px;
 }
-.write-div {
-	margin-left:60px;
-	margin-top:10px;
+
+/* 타임라인 화면 timeline */
+
+#timelineHeader {
+	width: 700px;
+	height:100px;
 }
 
+#timelineSection {
+	width:900px;
+	height:800px;
+}
 
-footer {
-	width:710px;
-	height:50px;
-	margin-left:60px;
+.timeline-div1 {
+	margin-left: 130px;
 }
-.footer-btn {
-	margin-left: 260px;
-}
+
 .timeline-div {
 	width:420px;
 	height:70px;
@@ -154,14 +119,12 @@ footer {
 	color:#696969;
 	background-color: #eeeeee;
 }
-.file-upload {
-	margin-right:250px;
-}
 
 .timeline-box {
 	width:600px;
 	margin-left: 150px;
 }
+
 .comment-input {
 	width:520px;
 }
@@ -170,18 +133,40 @@ footer {
 	height:100px;
 }
 
-.detail-content {
-	background-color:#f7f7f7;
-	height:100px;
+/* 내 게시물 postDetail */
+
+.write-div {
+	margin-left:60px;
+	margin-top:10px;
 }
+
+footer {
+	width:710px;
+	height:50px;
+	margin-left:60px;
+}
+
+.footer-btn {
+	margin-left: 260px;
+}
+
+.file-upload {
+	margin-right:250px;
+}
+
 .detail-btn {
 	height:35px;
 	width:65px;
 	margin-left:10px;
 }
+
 .file-name {
 	margin-right: 120px;
 }
+
+
+
+
 
 
 

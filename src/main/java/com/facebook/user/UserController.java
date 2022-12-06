@@ -19,7 +19,7 @@ public class UserController {
 	public String signUpView() {
 		
 		return "user/signUp";
-	}
+	} 
 	
 	/**
 	 * 로그인 화면
