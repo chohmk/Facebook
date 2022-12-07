@@ -10,7 +10,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.facebook.post.bo.PostBO;
-import com.facebook.post.model.Post;
 import com.facebook.timeline.bo.TimelineBO;
 import com.facebook.timeline.model.CardView;
 
@@ -21,8 +20,8 @@ import com.facebook.timeline.model.CardView;
 
 
 public class TimelineController {
-	@Autowired
-	private PostBO postBO;
+	// @Autowired
+	// private PostBO postBO;
 	
 	@Autowired
 	private TimelineBO timelineBO;
