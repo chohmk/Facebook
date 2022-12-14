@@ -85,7 +85,7 @@
 
 						<!-- 가입하기 버튼 -->
 						<div class="d-flex justify-content-center mt-3">
-							<button tpye="submit" id="signUpBtn"
+							<button type="submit" id="signUpBtn"
 								class="btn form-control col-6 text-white">가입하기</button>
 						</div>
 
