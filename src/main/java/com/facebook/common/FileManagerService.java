@@ -16,7 +16,8 @@ public class FileManagerService {
 	private Logger log = LoggerFactory.getLogger(FileManagerService.class);
 
 	// 실제 이미지가 저장될 경로(서버)
-	public static final String FILE_UPLOAD_PATH = "D:\\조현\\spring\\facebook\\images/";
+	public static final String FILE_UPLOAD_PATH = "/home/ec2-user/img/";
+	// public static final String FILE_UPLOAD_PATH = "D:\\조현\\spring\\facebook\\images/";
 
 	// input: 멀티파트 파일, userLoginId
 	// output: 이미지 패스
