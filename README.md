@@ -10,7 +10,7 @@ Facebook은 소중한 사람들의 근황과 제 일상을 공유할 수 있는 
 예전 시간가는 줄 모르고 재밌게 SNS를 했던 기억이 떠올라 재미있게 개발할 수 있을 것 같아서  
 저의 첫 개인프로젝트의 주제로 선정하였습니다.
 
-- 개요
+- **개요**
   #### 프로젝트 진행 순서
       
       기획 / 일정표 제작 -> DB설계 -> URL/API설계 -> 기능 구현 -> 테스트 / 배포
@@ -30,7 +30,7 @@ Facebook은 소중한 사람들의 근황과 제 일상을 공유할 수 있는 
      <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
      <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
      
-- 프로젝트 기획
+- **프로젝트 기획**
   #### 기획서
   
      [카카오 오븐 기획서](https://ovenapp.io/project/9pgiWGxen9A2hDKGk8WaiIaQbHJt8JwX#IxbOg)
@@ -38,7 +38,7 @@ Facebook은 소중한 사람들의 근황과 제 일상을 공유할 수 있는 
      [DB / URL 설계](https://docs.google.com/spreadsheets/d/1tOvoTo4X4-1eNtocFoKUccMBCZS0_nHmrvhQAYCjbOc/edit#gid=0)
 
 
-- 개발
+- **개발**
   #### 주요 기능
   
      - 게시물 등록 : 게시물을 업로드 하게 되면 타임라인에 보여집니다.
@@ -53,7 +53,7 @@ Facebook은 소중한 사람들의 근황과 제 일상을 공유할 수 있는 
     - 회원 탈퇴 
   #### 영상
 
-- 느낀 점
+- **느낀 점**
   
    한달이란 시간 동안 그동안 배웠던 내용을 바탕으로  Facebook을 모방한 sns 프로젝트를 진행하였습니다.  
    혼자 설계부터 구현까지 완성해야 하는 걱정과 두려움이 앞섰습니다.  
