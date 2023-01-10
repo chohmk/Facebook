@@ -52,6 +52,10 @@ Facebook은 소중한 사람들의 근황과 제 일상을 공유할 수 있는 
     - 내 정보 수정
     - 회원 탈퇴 
   #### 영상
+  
+    [![페이스북 프로젝트](http://img.youtube.com/vi/Wj6A61S0-ck/0.jpg)](https://www.youtube.com/watch?v=Wj6A61S0-ck) 
+                                    
+   
 
 - **느낀 점**
   
