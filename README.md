@@ -48,6 +48,51 @@ Facebook은 소중한 사람들의 근황과 제 일상을 공유할 수 있는 
      
   #### 트러블 슈팅
   
+    <details>
+    <summary>이미지를 교체하지 않고 수정 할 때 에러 발생</summary>
+    
+    #### org.springframework.web.multipart.support.MissingServletRequestPartException 
+
+    #### #문제상황 
+    내 게시물 페이지에서 이미지를 교체하지 않고 수정 버튼을 클릭할 때 에러가 발생했습니다.
+    
+    #### #해결방법
+    이미지를 교체하지 않고 수정을 하게 되면 에러가 발생하지 않았는데, 제가 DB에서 imagePath는 null이 가능하도록 설계하고  
+    Controller에서는 imagePath를 필수 파라미터로 받아서 발생된 에러였습니다.  
+    @RequestParam(value="file", required=false)MultipartFrile file 로 변경하니 정상적으로 작동하였습니다.
+    </details>
+    
+    <details>
+    <summary>이미지 경로 오류</summary>
+    
+    #### #java.sql.SQLIntegrityConstraintViolationException
+    
+    #### #문제상황
+    이미지를 업로드 할 때 에러가 발생했습니다.
+    
+    #### #해결방법
+    FileManagerService에서 이미지를 업로드할 때 저장되는 경로에 문제였습니다.  
+    public static final String FILE_UPLOAD_PATH = "C:\\코딩\\백앤드\\spring\\Facebook\\images/";
+    로 경로를 수정하니 해결되었습니다.
+      
+    </details>
+    
+    <details>
+    <summary>타임라인에서 게시글을 클릭 할 때 에러 발생</summary>
+    
+    #### #org.apache.ibatis.binding.BindingException: Invalid bound statement (not found)
+    
+    #### #문제상황
+    타임라인에서 한개의 게시글을 클릭하면 해당 게시글의 페이지로 이동해야하는데 그 과정에서 에러가 발생했습니다.
+    
+    #### #해결방법
+    먼저 MyBatis 에러를 확인하고 postMapper.xml 와 연결되는 postDAO에 오타가 있는지 확인하였습니다.  
+    그 결과 postMapper.xml 와 postDAO의 아이디값이 일치하지 않아 발생한 에러임을 확인하였습니다.  
+    서로의 아이디 값을 일치하게 수정하니 해결되었습니다.
+
+
+    </detail>
+  
   #### 향후 추가 및 개선 계획
     - 내 정보 수정
     - 회원 탈퇴 
